@@ -1,8 +1,48 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script type="text/javascript" src="datos.js"></script>
     <script type="text/javascript" src="ejercicio1.js"></script>
+	<STYLE type="text/css">
+		div.salida {			
+			background-color: lightYellow;
+			border-style: solid;
+			border-color: black;
+			border-width: 2pt;
+			margin-right: 3%;
+			margin-left: 3%;
+		}
+	</style>
   </head>
   <body>
-</body>
+	<h1>Curso "Programación cliente-servidor en Javascript"</h1>
+	<h2>Ejercicio 1</h2>
+	<p>Clasificación de direcciones web según una valoración del 1 al 5 (siendo 5 la más alta). Se muestra un combo en el cual el usuario selecciona la clasificación que desea obtener y se llama a la rutina javascript:</p>
+		<ul>
+			<li>Lee un fichero de texto que tendrá registros separados por ';', cada registro contiene 2 campos separados por el carácter '#' que son la url de la web y la puntuación</li>
+			<li>Crea un array de objetos "web" que tendrá las propiedades url, puntuación y literalPuntuación, la cual se obtiene a partir de la puntuación según una estructura de decisión switch-case</li>
+			<li>Muestra en la web original el resultado obtenido mediante enlaces a las web filtradas según la puntuación</li>
+			<li>Igualmente se muestra el fichero JSON resultante con las propiedades url, puntuacion, y literalPuntuacion</li>
+		</ul>
+	<hr>
+	</br>
+	<form>
+	Seleccionar webs según clasificación: 
+			<select name="cmbPuntuacion" onchange="return mostrarResultado(this.value, 'resultadoHTML', 'resultadoJSON')"> 
+				<option value="">...</option>
+				<option value="0">(Todas)</option>
+				<option value="5">5. Imprescindibles</option>
+				<option value="4">4. Muy recomendable</option>
+				<option value="3">3. Interés moderado</option>
+				<option value="2">2. Nada recomendable</option>
+				<option value="1">1. Peligrosas!</option>
+			</select>
+	</form>
+	</br>Salida en formato HTML:<p></p><div id="resultadoHTML" class="salida"></div>
+	</br>Salida en formato JSON:<p><div id="resultadoJSON" class="salida"></div>	
+	</br></br>
+	<hr>
+	<p><b>Julio Aguado Robles</br>Alumno: al10788</b></p>
+  </body>
 </html>
